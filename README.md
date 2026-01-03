@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# Dayflow — Human Resource Management System (HRMS)
 
-## Project info
+Dayflow is a modern, secure, and scalable **Human Resource Management System (HRMS)** designed for hackathons, academic projects, and early-stage organizations. It centralizes essential HR operations such as employee onboarding, attendance tracking, leave management, and payroll visibility into a single, user-friendly platform.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The system is built with industry-standard architecture, role-based access control, and a clean professional UI, making it easy to present, deploy, and extend.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Project Overview
 
-**Use Lovable**
+Managing HR operations manually using spreadsheets and emails leads to inefficiency, errors, and security risks. Dayflow solves this problem by providing a unified digital HR platform that automates daily HR workflows while maintaining data security and transparency.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+**Target Users**
+- Small and medium organizations
+- Startups
+- Educational institutions
+- Internal HR departments
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🎯 Core Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🔐 Authentication & Authorization
+- Secure Sign Up and Sign In
+- Email verification
+- JWT-based authentication
+- Role-based access control (RBAC)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 👤 Employee Features
+- Personal and professional profile management
+- Daily check-in and check-out
+- View attendance history
+- Apply for leave (Paid, Sick, Unpaid)
+- Track leave approval status
+- View payroll details (read-only)
 
-Follow these steps:
+### 🧑‍💼 Admin / HR Features
+- Manage employees and roles
+- View organization-wide attendance
+- Approve or reject leave requests
+- Configure payroll structure
+- Generate attendance and HR reports
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### ⏱ Attendance Management
+- Daily attendance tracking
+- Weekly and monthly summaries
+- Leave-adjusted attendance calculation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🧠 System Architecture
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Frontend (React)
+        ↓
+REST API (Node.js + Express)
+        ↓
+Service Layer
+(Auth | Attendance | Leave | Payroll)
+        ↓
+Database (PostgreSQL)
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend:** React, Tailwind CSS, Framer Motion  
+**Backend:** Node.js, Express.js, JWT, Bcrypt  
+**Database:** PostgreSQL, SQLite  
+**DevOps:** Docker, GitHub Actions  
+
+---
+
+## 📁 Project Structure
+
+dayflow/
+├── client/
+├── server/
+├── database/
+├── setup_project.sh
+├── .env.example
+└── README.md
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+git clone https://github.com/rud12/dayflow.git
+cd dayflow
+npm install
+cp .env.example .env
+```
+
+---
+
+## ▶️ Running Locally
+
+```bash
+docker run --name dayflow-postgres -e POSTGRES_DB=dayflow -e POSTGRES_USER=dayflow -e POSTGRES_PASSWORD=dayflow -p 5432:5432 -d postgres:15
+npm run migrate
+npm run seed
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🔒 Security
 
-**Use GitHub Codespaces**
+- Password hashing using bcrypt
+- JWT authentication
+- Role-based authorization
+- Secure environment variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🚀 Future Scope
 
-This project is built with:
+- Mobile App (React Native)
+- Payroll automation
+- Analytics dashboard
+- Geo-fenced attendance
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 📜 License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+MIT License
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 👨‍💻 Author
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Rudra Kachhia  
+GitHub: https://github.com/rud12/dayflow
